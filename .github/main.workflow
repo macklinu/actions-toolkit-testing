@@ -6,4 +6,5 @@ workflow "New workflow" {
 action "Your action name" {
   uses = "./my-action"
   args = "hello moto"
+  secrets = ["GITHUB_TOKEN"]
 }
