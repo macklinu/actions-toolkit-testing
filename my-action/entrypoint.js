@@ -1,4 +1,7 @@
 const { Toolkit } = require('actions-toolkit')
 const tools = new Toolkit()
 
-console.log(tools.arguments)
+tools.github.repos
+  .getCommit(tools.context.repo(tools.context.sha))
+  .then(response => console.log(response))
+  .catch(err => console.error(err))
